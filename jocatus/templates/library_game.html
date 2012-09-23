@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block main%}
+	<div class="block-bot">
+		<div class="head">
+			<div class="head-cnt"> 
+				<h3>Ludothèque</h3>
+			</div>
+		</div>		
+		{% if library_games %}
+			{% for game in library_games %}
+				<p><a href="{% url game game.name %}">{{ game.name }} </a></p>
+			{%endfor%}
+			
+		{% else %}
+			<p>Game not Found </p>
+		{% endif %}
+	</div>
+{% endblock %}
+
+{% block sidebar%}
+	{% include "include/search.html"%}
+	{% include "include/auth.html"%}
+	{% load lastGame_extra  %}
+	{% lastGame_extra%}
+	
+{% endblock %}

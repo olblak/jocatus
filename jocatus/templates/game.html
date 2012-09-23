@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block main%}
+	<div class="block-bot">
+		{% if games %}
+			{% for game in games %}
+			<div class="head">
+				<div class="head-cnt"> 
+					<h3>{{ game.name }}</h3>
+				</div>
+			</div>
+			<p>Nom     	 : {{ game.name }}</p>
+			<p>Edition 	 : {{ game.edition }}</p>
+			<p>Auteur  	 : {{ game.Author }}</p>
+			<p>Age	   	 : {{ game.age_min }} à {{ game.age_max }}</p>
+			<p>Nombre joueur : {{ game.player_min }} à {{ game.player_max}}</p>
+			<p>Durée de jeu  : {{ game.time }}</p>
+			<p>Langue 	 : {{ game.language }}</p>
+			<p>Description 	 : {{ game.description }}</p>
+			<br/>
+			<br/>
+			<p><img src="{{ MEDIA_URL }}{{game.picture}}" alt="{{ game.name }}"/></p>
+			{% endfor %}
+		
+		{% else %}
+		<div class="head">
+			<div class="head-cnt"> 
+				<h3><p>Game not Found</p> </h3>
+			</div>
+		</div>
+		{% endif %}
+	</div>
+{% endblock %}
+

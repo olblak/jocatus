@@ -1,0 +1,34 @@
+
+<div class="block">
+        <div class="block-bot">
+          <div class="head">
+            <div class="head-cnt">
+              <h3>Last Game</h3>
+            </div>
+          </div>
+          <div class="image-articles articles">
+            <div class="cl">&nbsp;</div>
+		{% if lastGames %}
+			{% for lastGame in lastGames %}
+			
+			<div class="article">
+			<div class="cl">&nbsp;</div>
+			<div class="image"> <a href=""> <img src="{{ MEDIA_URL }}{{lastGame.picture}}" alt="{{ lastGame.name }}"/> </a> </div>
+			<div class="cnt">
+				<h4><a href="{% url game lastGame.name %} ">{{ lastGame.name }}</a></h4>
+				<p> {{ lastGame.description|slice:":100"}} </p>
+			</div>
+			<div class="cl">&nbsp;</div>
+			</div>
+			
+			{% endfor %}
+		{% else %}
+			<p>Game Bdd Error</p>
+		{% endif %}
+            
+            <div class="cl">&nbsp;</div>
+            <a href="{% url library_game %}" class="view-all">view all</a>
+            <div class="cl">&nbsp;</div>
+          </div>
+        </div>
+      </div>
