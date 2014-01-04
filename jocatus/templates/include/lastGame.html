@@ -15,7 +15,7 @@
 			<div class="cl">&nbsp;</div>
 			<div class="image"> <a href=""> <img src="{{ MEDIA_URL }}{{lastGame.picture}}" alt="{{ lastGame.name }}"/> </a> </div>
 			<div class="cnt">
-				<h4><a href="{% url game lastGame.name %} ">{{ lastGame.name }}</a></h4>
+				<h4><a href="{% url "game lastGame.name" %} ">{{ lastGame.name }}</a></h4>
 				<p> {{ lastGame.description|slice:":100"}} </p>
 			</div>
 			<div class="cl">&nbsp;</div>

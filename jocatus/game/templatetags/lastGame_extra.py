@@ -10,4 +10,4 @@ register = template.Library()
 @register.simple_tag
 def lastGame_extra():
 	_lastG = Game.objects.all()
-	return render_to_response('include/lastGame.html',{'MEDIA_URL':settings.MEDIA_URL ,'lastGames': _lastG })
+	return render_to_response('include/lastGame.html', {'MEDIA_URL':settings.MEDIA_URL, 'lastGames': _lastG })

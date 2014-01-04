@@ -15,9 +15,9 @@ urlpatterns = patterns('',
 	url(r'^$', 'jocatus.game.views.index',name='news'),
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^accounts/', include('allauth.urls')),
-	url(r'^library_game/(?P<game>\w+)','jocatus.game.views.game',name='game'), # Un ordre a respecter? 
+	url(r'^library_game/(?P<game>\w+)','jocatus.game.views.game',name='game'), # Un ordre a respecter?
 	url(r'^library_game/', 'jocatus.game.views.library_game', name='library_game'),
-    
+
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 print settings.MEDIA_ROOT
 print settings.MEDIA_URL

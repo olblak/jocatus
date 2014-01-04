@@ -1,7 +1,7 @@
 <div id="search" class="block">
 	<div class="block-bot">
 		<div class="block-cnt">
-			<form method="post" name="search" action="{% url news %}">
+			<form method="post" name="search" action="{% url "news" %}">
 				{% csrf_token %}
 				<div class="cl">&nbsp;</div>
 				<div class="fieldplace">
