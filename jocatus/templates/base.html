@@ -7,25 +7,19 @@
 			<div class="cl">&nbsp;</div>
 			<div id="content">
 				<div class="block">
-					<div class="block-bot">
-						<div class="block">
-							{% block main %}
-							<div class="block-bot">
-								<div class="head">
-									<div class="head-cnt"> 
-										<h3>Base</h3>
-									</div>
-								</div>
-							</div>
-								{% block body %}
-								{% block content %}
-								{% endblock content %}
-								{% endblock body %}
-								{% block extra_body %}
-								{% endblock extra_body %}
-							
-							{% endblock %}
-						</div>
+                    <div class="block-main">            
+                        <div class="block-bot">
+                            <div class="block">
+                                {% block main %}
+                                    {% block body %}
+                                    {% block content %}
+                                    {% endblock content %}
+                                    {% endblock body %}
+                                    {% block extra_body %}
+                                    {% endblock extra_body %}        
+                                {% endblock %}
+                            </div>
+                        </div>
 					</div>
 				</div>
 			</div>
