@@ -85,7 +85,7 @@ a:hover { text-decoration: none; }
 #content .block .block-bot { background-image: url(images/content-block-bot.gif); border-radius : 10px }
 
 #sidebar .block { background-image: url(images/sidebar-block-top.gif); background-color: #484848; width: 226px; max-width: 226px ; word-wrap: break-word; }
-#sidebar .block .block-bot { background-image: url(images/sidebar-block-bot.gif); max_height: 10px; overflow:hidden;  }
+#sidebar .block .block-bot { background-image: url(images/sidebar-block-bot.gif); overflow:hidden;  }
 
 
 #search .block-cnt { padding: 5px 5px 5px 4px;  }

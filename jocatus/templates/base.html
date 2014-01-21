@@ -26,12 +26,9 @@
 		</div>
 		<div id="sidebar">
 		{% block sidebar %}
-		
-		{%include "include/search.html"%}	
-		
-
-		
-		
+	    
+        {% block auth %} {% endblock %}
+		{% include "include/search.html"%}	
 		{% include "include/auth.html"%}
 		{% load lastGame_extra  %}
 		{% lastGame_extra%}

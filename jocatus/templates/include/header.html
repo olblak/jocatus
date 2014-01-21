@@ -15,8 +15,11 @@
 					<li class="home"><a href="{%url "news" %}">Home</a></li>
 					<li><a href="{%url "news" %}">Mon compte</a></li>
 					<li><a href="{%url "news" %}">Forum</a></li>
-					<li><a href="{%url "account_login" %}">Login</a></li>
-					<li><a href="{%url "account_logout" %}">Logout</a></li>
+                    {%if user.is_authenticated%}
+					    <li><a href="{%url "account_logout" %}">Logout</a></li>
+                    {%else%}
+					    <li><a href="{%url "account_login" %}">Login</a></li>
+                    {%endif%}
 				</ul>
 			</div>
 			<div class="cl">&nbsp;</div>

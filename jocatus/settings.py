@@ -116,8 +116,8 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     #/home/pilou/Documents/PYT/jocatus/templates,
-    os.path.join(ABSOLUTE_PATH, 'templates')
-
+    os.path.join(ABSOLUTE_PATH, 'templates'),
+    #os.path.join(ABSOLUTE_PATH, 'allauth/templates'),
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -143,9 +143,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'jocatus.game',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
+    'jocatus.allauth',
+    'jocatus.allauth.account',
+    'jocatus.allauth.socialaccount',
     #'allauth.socialaccount.providers.facebook',
     #'allauth.socialaccount.providers.google',
     #'allauth.socialaccount.providers.twitter',
@@ -156,7 +156,7 @@ AUTHENTICATION_BACKENDS = (
 )
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = True
+ACCOUNT_EMAIL_VERIFICATION = False
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = 'settings.news'
 ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = 'settings.news'

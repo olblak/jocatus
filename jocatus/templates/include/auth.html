@@ -1,6 +1,8 @@
+
+{% extends "base.html" %}
 {% load i18n %}
+{% block auth %}
 {% load account %}
-{% load url from future %}
       <div id="sign" class="block">
         <div class="block-bot">
           <div class="block-cnt">
@@ -10,42 +12,21 @@
 				<h3>{% trans "Sign In" %}</h3>
             		</div>
           		</div>
-				{% if not user.is_authenticated %}
-					{% if socialaccount.providers  %}
-						<p>{% blocktrans with site.name as site_name %}Please sign in with one
-						of your existing third party accounts. Or, <a 
-						href="{{ signup_url }}">sign up</a> for a {{site_name}} account and sign in
-						below:{% endblocktrans %}</p>
-						<div class="socialaccount_ballot">
-							<ul class="socialaccount_providers">
-							{% include "socialaccount/snippets/provider_list.html" %}
-							</ul>
-							<div class="login-or">{% trans 'or' %}</div>
 
-						</div>
-						{% include "socialaccount/snippets/login_extra.html" %}
+            {% block head_title %} {% endblock head_title %}
+            {% block content %} 
 
-					{% endif %}
-				{% endif %}
-
-				<form class="login" method="POST" action="{% url 'account_login' %}">
-					{% csrf_token %}
-					{{ form.as_p }}
-					{% if redirect_field_value %}
-					<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-					{% endif %}
-					<button class="button button-left" type="submit">{% trans "Connection" %}</button>
-					<a href="{% url 'account_signup' %}" class="button button-right">inscription</a>
-					
-				</form>
-				<p class="center"><a href="--------------">Help?</a>&nbsp;&nbsp;<a href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a></p>
-    
 				{% if user.is_authenticated %}
-					{% include "account/snippets/already_logged_in.html" %}
-					<a href="{% url 'account_logout' %}" class="button button-right">Logout</a>
-				{% endif %}			
-            	
+                <-- If the user is already logged --!>
+                    {%  include "logout.html" %}
+                {% else %}
+                <-- If the user is not logged --!> 
+                    {% include "login.html" %}
+				{% endif %}
+            {% endblock content %}
 	        <div class="cl">&nbsp;</div>
           </div>
         </div>
       </div>
+
+{% endblock auth %}
