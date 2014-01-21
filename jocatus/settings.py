@@ -7,7 +7,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Olivier', 'verninol@gmail.com'),
+    ('olblak', 'olblak@olblak.com'),
 )
 
 MANAGERS = ADMINS
@@ -28,11 +28,11 @@ DATABASES = {
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'Europe/Brussels'
+TIME_ZONE = 'Etc/UTC'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.hdtml
-LANGUAGE_CODE = 'fr-be'
+LANGUAGE_CODE = 'us'
 
 SITE_ID = 1
 
@@ -117,7 +117,6 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     #/home/pilou/Documents/PYT/jocatus/templates,
     os.path.join(ABSOLUTE_PATH, 'templates'),
-    #os.path.join(ABSOLUTE_PATH, 'allauth/templates'),
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -143,9 +142,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'jocatus.game',
-    'jocatus.allauth',
-    'jocatus.allauth.account',
-    'jocatus.allauth.socialaccount',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     #'allauth.socialaccount.providers.facebook',
     #'allauth.socialaccount.providers.google',
     #'allauth.socialaccount.providers.twitter',

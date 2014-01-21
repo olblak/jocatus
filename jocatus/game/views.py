@@ -36,5 +36,5 @@ def game(request, game):
 
 #TODO Add an offset over the list
 def library_game(request):
-    library_game = Game.objects.all()
+    _library_game = Game.objects.all()
     return render_to_response('library_game.html', {'library_game': _library_game})
