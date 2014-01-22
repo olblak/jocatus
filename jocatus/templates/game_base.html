@@ -1,0 +1,42 @@
+{% block header %}
+{% include "include/header.html" %}
+{% endblock %}
+
+	<div id="main">
+		<div id="main-bot">
+			<div class="cl">&nbsp;</div>
+			<div id="content">
+				<div class="block">
+                    <div class="block-main">            
+                        <div class="block-bot">
+                            <div class="block">
+                                {% block main %}
+                                    {% block body %}
+                                    {% block content %}
+                                    {% endblock content %}
+                                    {% endblock body %}
+                                    {% block extra_body %}
+                                    {% endblock extra_body %}        
+                                {% endblock %}
+                            </div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="sidebar">
+		{% block sidebar %}
+	    
+        {% block auth %} {% endblock %}
+		{% include "include/search.html"%}	
+		{% include "include/auth.html"%}
+		{% load lastGame_extra  %}
+		{% lastGame_extra%}
+		
+		{%endblock%}
+		</div>
+    
+    
+{% block footer %}
+{% include "include/footer.html" %}
+{% endblock %}
