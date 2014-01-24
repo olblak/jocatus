@@ -16,6 +16,7 @@
 
 				{% if user.is_authenticated %}
                     {%  include "account/logout.html" %}
+                    <h1> You are authenticated </h1>
                 {% else %}
                     {% include "account/login.html" %}
 				{% endif %}

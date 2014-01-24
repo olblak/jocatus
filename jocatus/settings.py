@@ -159,6 +159,7 @@ ACCOUNT_EMAIL_VERIFICATION = False
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = 'settings.news'
 ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = 'settings.news'
+LOGIN_REDIRECT_URLNAME = "news" 
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send ansu email to

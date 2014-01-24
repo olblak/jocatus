@@ -12,9 +12,10 @@
 		<div id="header">
   			<div id="top-nav">
 				<ul>
-					<li class="home"><a href="{%url "news" %}">Home</a></li>
-					<li><a href="{%url "news" %}">Mon compte</a></li>
-					<li><a href="{%url "news" %}">Forum</a></li>
+					<li class="home"><a href="{% url "news" %}">Home</a></li>
+					<li><a href="{% url "news" %}">Mon compte</a></li>
+					<li><a href="{% url "news" %}">Forum</a></li>
+                    {% load account %}
                     {%if user.is_authenticated%}
 					    <li><a href="{%url "account_logout" %}">Logout</a></li>
                     {%else%}
